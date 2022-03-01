@@ -15,15 +15,15 @@
 replicaCount: 1
 image:
   #Set the repository value below to your own
-  repository: somerepo/someimage
+  repository: rocky341/sidecar-demo
   pullPolicy: Always
   tag: latest
-  containerPort: 8080
+  containerPort: 8087
 imagePullSecrets: []
 service:
   type: ClusterIP
-  port: 8080
-  targetPort: 8080
+  port: 8087
+  targetPort: 8087
 
 # Set serviceAccount.create to true if User deploying has assigned
 # ClusterRoleBinding privileges to enable cluster namespaces endpoint

@@ -35,10 +35,10 @@ spec:
             envFrom:
               - configMapRef:
                   name: {{ include "helm.fullname" . }}
-            resources:
-              requests:
-                memory: "1Gi"
-                cpu: "1000m"
-              limits:
-                memory: "1Gi"
-                cpu: "1000m"
+            resources: {}
+          - image: xscys/nginx-sidecar-basic-auth
+            imagePullPolicy: Always
+            name: auth-proxy
+            ports:
+              - containerPort: 8087
+                protocol: TCP
